@@ -1,0 +1,36 @@
+{
+  "conversations": [
+    {
+      "id": "chat1",
+      "messages": [
+        {
+          "sender": {
+            "name": "李美麗",
+            "avatar": "avatar1.jpg"
+          },
+          "content": "你今天在哪裡?",
+          "timestamp": "12:30",
+          "type": "text"
+        },
+        {
+          "sender": {
+            "name": "我",
+            "isMe": true
+          },
+          "content": "在公園!",
+          "timestamp": "12:31",
+          "type": "text"
+        },
+        {
+          "sender": {
+            "name": "我",
+            "isMe": true
+          },
+          "content": "park.jpg",
+          "timestamp": "12:31",
+          "type": "image"
+        }
+      ]
+    }
+  ]
+} 

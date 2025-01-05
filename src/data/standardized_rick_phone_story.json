@@ -1,0 +1,238 @@
+{
+    "version": "1.0",
+    "metadata": {
+        "created_at": "2024-03-15T14:30:00+08:00",
+        "app_version": "1.0.0"
+    },
+    "items": [
+        {
+            "id": "chat1",
+            "type": "chat",
+            "metadata": {
+                "chat_type": "group",
+                "title": "男團工作群",
+                "participants": [
+                    {
+                        "id": "user1",
+                        "name": "李楷燦"
+                    },
+                    {
+                        "id": "user2",
+                        "name": "主舞A"
+                    },
+                    {
+                        "id": "user3",
+                        "name": "忙內B"
+                    },
+                    {
+                        "id": "user4",
+                        "name": "朴志晟",
+                        "is_me": true
+                    }
+                ]
+            },
+            "content": [
+                {
+                    "id": "msg1",
+                    "sender_id": "user1",
+                    "text": "大家今晚記得九點錄製綜藝，別遲到。",
+                    "timestamp": 1710481800
+                },
+                {
+                    "id": "msg2",
+                    "sender_id": "user2",
+                    "text": "收到，哥。",
+                    "timestamp": 1710481860
+                },
+                {
+                    "id": "msg3",
+                    "sender_id": "user3",
+                    "text": "OK！",
+                    "timestamp": 1710481920
+                },
+                {
+                    "id": "msg4",
+                    "sender_id": "user4",
+                    "text": "好的。",
+                    "timestamp": 1710481980
+                }
+            ]
+        },
+        {
+            "id": "chat2",
+            "type": "chat",
+            "metadata": {
+                "chat_type": "personal",
+                "title": "李楷燦",
+                "participants": [
+                    {
+                        "id": "user1",
+                        "name": "李楷燦"
+                    },
+                    {
+                        "id": "user4",
+                        "name": "朴志晟",
+                        "is_me": true
+                    }
+                ]
+            },
+            "content": [
+                {
+                    "id": "msg5",
+                    "sender_id": "user1",
+                    "text": "志晟，錄製完別跑，哥有話跟你說。",
+                    "timestamp": 1710482040
+                },
+                {
+                    "id": "msg6",
+                    "sender_id": "user4",
+                    "text": "？？",
+                    "timestamp": 1710482100
+                },
+                {
+                    "id": "msg7",
+                    "sender_id": "user1",
+                    "text": "別想太多，沒什麼大事～",
+                    "timestamp": 1710482160
+                },
+                {
+                    "id": "msg8",
+                    "sender_id": "user4",
+                    "text": "哦……",
+                    "timestamp": 1710482220
+                }
+            ]
+        },
+        {
+            "id": "memo1",
+            "type": "memo",
+            "metadata": {
+                "title": "志晟的習慣",
+                "created_at": "2024-03-15T14:30:00+08:00"
+            },
+            "content": {
+                "text": "1. 練習累的時候會偷偷坐在鏡子邊玩手機。\n2. 喜歡吃草莓但不敢自己買，怕被粉絲認出。\n3. 笑起來真的很可愛，想抱（但不能太明顯）。\n4. 他是不是知道我會偷看他啊？"
+            }
+        },
+        {
+            "id": "chat3",
+            "type": "chat",
+            "metadata": {
+                "chat_type": "personal",
+                "title": "朴志晟",
+                "participants": [
+                    {
+                        "id": "user1",
+                        "name": "李楷燦"
+                    },
+                    {
+                        "id": "user4",
+                        "name": "朴志晟",
+                        "is_me": true
+                    }
+                ]
+            },
+            "content": [
+                {
+                    "id": "msg9",
+                    "sender_id": "user1",
+                    "text": "你撿到我手機了？",
+                    "timestamp": 1710482280
+                },
+                {
+                    "id": "msg10",
+                    "sender_id": "user4",
+                    "text": "嗯，剛剛在練習室撿到的……",
+                    "timestamp": 1710482340
+                },
+                {
+                    "id": "msg11",
+                    "sender_id": "user1",
+                    "text": "那你看到裡面什麼了嗎？",
+                    "timestamp": 1710482400
+                },
+                {
+                    "id": "msg12",
+                    "sender_id": "user4",
+                    "text": "……",
+                    "timestamp": 1710482460
+                },
+                {
+                    "id": "msg13",
+                    "sender_id": "user1",
+                    "text": "？？？說話呀！",
+                    "timestamp": 1710482520
+                },
+                {
+                    "id": "msg14",
+                    "sender_id": "user4",
+                    "text": "你……為什麼會記得我那麼多小事？",
+                    "timestamp": 1710482580
+                },
+                {
+                    "id": "msg15",
+                    "sender_id": "user1",
+                    "text": "呃，你看到了備忘錄？",
+                    "timestamp": 1710482640
+                },
+                {
+                    "id": "msg16",
+                    "sender_id": "user4",
+                    "text": "是。",
+                    "timestamp": 1710482700
+                }
+            ]
+        },
+        {
+            "id": "chat4",
+            "type": "chat",
+            "metadata": {
+                "chat_type": "personal",
+                "title": "李楷燦",
+                "participants": [
+                    {
+                        "id": "user1",
+                        "name": "李楷燦"
+                    },
+                    {
+                        "id": "user4",
+                        "name": "朴志晟",
+                        "is_me": true
+                    }
+                ]
+            },
+            "content": [
+                {
+                    "id": "msg17",
+                    "sender_id": "user1",
+                    "text": "好吧，既然你都看到了……",
+                    "timestamp": 1710482760
+                },
+                {
+                    "id": "msg18",
+                    "sender_id": "user1",
+                    "text": "那就明晚我們一起去買草莓吧。",
+                    "timestamp": 1710482820
+                },
+                {
+                    "id": "msg19",
+                    "sender_id": "user4",
+                    "text": "什麼意思？！",
+                    "timestamp": 1710482880
+                },
+                {
+                    "id": "msg20",
+                    "sender_id": "user1",
+                    "text": "字面意思。反正我也喜歡草莓，順便告訴你一些……更重要的事。",
+                    "timestamp": 1710482940
+                },
+                {
+                    "id": "msg21",
+                    "sender_id": "user4",
+                    "text": "……（心跳瘋狂加速）",
+                    "timestamp": 1710483000
+                }
+            ]
+        }
+    ]
+}

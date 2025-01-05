@@ -1,0 +1,59 @@
+{
+  "version": "1.0",
+  "metadata": {
+    "created_at": "2024-03-15T14:30:00+08:00",
+    "app_version": "1.0.0"
+  },
+  "items": [
+    {
+      "id": "chat1",
+      "type": "chat",
+      "metadata": {
+        "chat_type": "personal",
+        "title": "李美麗",
+        "participants": [
+          {
+            "id": "user1",
+            "name": "李美麗"
+          },
+          {
+            "id": "me",
+            "name": "我",
+            "is_me": true
+          }
+        ]
+      },
+      "content": [
+        {
+          "id": "msg1",
+          "sender_id": "user1",
+          "text": "你今天在哪裡?",
+          "timestamp": 1710481800
+        },
+        {
+          "id": "msg2",
+          "sender_id": "user1",
+          "text": "在等你回覆",
+          "timestamp": 1710482100
+        },
+        {
+          "id": "msg3",
+          "sender_id": "me",
+          "text": "在公園!",
+          "timestamp": 1710481860
+        }
+      ]
+    },
+    {
+      "id": "memo1",
+      "type": "memo",
+      "metadata": {
+        "title": "會議記錄",
+        "created_at": "2024-03-15T14:30:00+08:00"
+      },
+      "content": {
+        "text": "1. 專案進度討論\n- 前端開發完成70%\n- 後端API準備就緒\n- 預計下週開始測試\n\n2. 待辦事項\n- 完成使用者文檔\n- 準備發布計劃\n- 安排團隊會議"
+      }
+    }
+  ]
+} 

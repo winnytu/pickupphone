@@ -1,0 +1,403 @@
+.chat-editor {
+  background: white;
+  padding: 30px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+
+  .editor-section {
+    margin-bottom: 30px;
+
+    h3 {
+      color: var(--primary-pink);
+      font-size: 18px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      &::before {
+        content: '✨';
+        font-size: 16px;
+      }
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+
+      .message-buttons {
+        display: flex;
+        gap: 10px;
+
+        .add-message {
+          padding: 6px 12px;
+          background: white;
+          border: 2px solid;
+          border-radius: var(--radius-sm);
+          font-size: 14px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          &.other {
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+
+            &:hover {
+              background: var(--primary-blue);
+              color: white;
+            }
+          }
+
+          &.me {
+            border-color: var(--primary-pink);
+            color: var(--primary-pink);
+
+            &:hover {
+              background: var(--primary-pink);
+              color: white;
+            }
+          }
+        }
+      }
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--text-secondary);
+        font-size: 14px;
+      }
+
+      input {
+        width: 100%;
+        padding: 8px 12px;
+        border: 2px solid #eee;
+        border-radius: var(--radius-sm);
+        font-size: 14px;
+        transition: all 0.3s ease;
+
+        &:focus {
+          outline: none;
+          border-color: var(--primary-pink);
+        }
+      }
+    }
+
+    .messages {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      .message-editor {
+        padding: 15px;
+        border-radius: var(--radius-sm);
+
+        .message-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 10px;
+
+          .sender {
+            font-size: 14px;
+            font-weight: 500;
+          }
+
+          .remove-message {
+            width: 24px;
+            height: 24px;
+            padding: 0;
+            border: none;
+            background: none;
+            color: var(--text-secondary);
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+              color: #ff4757;
+              transform: scale(1.1);
+            }
+          }
+        }
+
+        textarea {
+          width: 100%;
+          min-height: 60px;
+          padding: 8px 12px;
+          border: 2px solid #eee;
+          border-radius: var(--radius-sm);
+          font-size: 14px;
+          resize: vertical;
+          transition: all 0.3s ease;
+
+          &:focus {
+            outline: none;
+            border-color: currentColor;
+          }
+        }
+
+        &.me {
+          background: rgba(251, 114, 153, 0.05);
+          border-left: 3px solid var(--primary-pink);
+
+          .message-header .sender {
+            color: var(--primary-pink);
+          }
+
+          textarea:focus {
+            border-color: var(--primary-pink);
+          }
+        }
+
+        &.other {
+          background: rgba(35, 173, 229, 0.05);
+          border-left: 3px solid var(--primary-blue);
+
+          .message-header .sender {
+            color: var(--primary-blue);
+          }
+
+          textarea:focus {
+            border-color: var(--primary-blue);
+          }
+        }
+      }
+    }
+  }
+
+  .generate-button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(45deg, var(--primary-pink), #ff9eb5);
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(251, 114, 153, 0.3);
+    }
+  }
+
+  .chat-type-toggle {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 20px;
+    background: rgba(251, 114, 153, 0.1);
+    padding: 4px;
+    border-radius: var(--radius-sm);
+
+    .toggle-button {
+      flex: 1;
+      padding: 8px;
+      background: none;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &.active {
+        background: white;
+        color: var(--primary-pink);
+        box-shadow: var(--shadow);
+      }
+    }
+  }
+
+  .group-members {
+    margin-top: 20px;
+
+    h4 {
+      font-size: 16px;
+      color: var(--text-secondary);
+      margin-bottom: 15px;
+    }
+
+    .members-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 15px;
+
+      .member-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 12px;
+        background: rgba(251, 114, 153, 0.05);
+        border-radius: var(--radius-sm);
+
+        .member-avatar {
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        .member-name {
+          font-size: 14px;
+          color: var(--text-primary);
+        }
+
+        .remove-member {
+          width: 20px;
+          height: 20px;
+          padding: 0;
+          border: none;
+          background: none;
+          color: var(--text-secondary);
+          font-size: 14px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          &:hover {
+            color: #ff4757;
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+
+    .add-member {
+      display: flex;
+      gap: 10px;
+
+      input {
+        flex: 1;
+        padding: 8px 12px;
+        border: 2px solid #eee;
+        border-radius: var(--radius-sm);
+        font-size: 14px;
+        transition: all 0.3s ease;
+
+        &:focus {
+          outline: none;
+          border-color: var(--primary-pink);
+        }
+      }
+
+      button {
+        padding: 8px 16px;
+        background: var(--primary-pink);
+        color: white;
+        border: none;
+        border-radius: var(--radius-sm);
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 15px rgba(251, 114, 153, 0.3);
+        }
+      }
+    }
+  }
+}
+
+.chat-editor-container {
+  position: relative;
+
+  .preview-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+    overflow-y: auto;
+
+    h3 {
+      color: white;
+      margin-bottom: 20px;
+      font-size: 24px;
+      position: sticky;
+      top: 0;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      width: 100%;
+      text-align: center;
+      z-index: 1;
+    }
+
+    .preview-container {
+      background: white;
+      border-radius: var(--radius-lg);
+      overflow: visible;
+      min-height: 300px;
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+      box-shadow: var(--shadow);
+    }
+
+    .preview-actions {
+      margin: 20px 0;
+      display: flex;
+      gap: 15px;
+      position: sticky;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      width: 100%;
+      justify-content: center;
+      z-index: 1;
+
+      button {
+        padding: 8px 20px;
+        border: none;
+        border-radius: var(--radius-sm);
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &.download-preview {
+          background: var(--primary-pink);
+          color: white;
+
+          &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(251, 114, 153, 0.3);
+          }
+        }
+
+        &.close-preview {
+          background: white;
+          color: var(--text-primary);
+
+          &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+} 

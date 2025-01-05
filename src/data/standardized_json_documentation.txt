@@ -1,0 +1,108 @@
+
+## 標準化 JSON 格式需求文檔
+
+### 完整結構說明與範例
+{
+  "version": "1.0",  // 文件版本
+  "metadata": {
+    "created_at": "2024-03-15T14:30:00+08:00",  // 創建時間（ISO 8601 格式）
+    "app_version": "1.0.0"  // 應用版本號
+  },
+  "items": [
+    {
+      "id": "chat1",  // 聊天項目ID
+      "type": "chat",  // 聊天類型
+      "metadata": {
+        "chat_type": "group",  // 群聊類型（可選值：group | personal）
+        "title": "男團工作群",  // 聊天標題
+        "participants": [  // 聊天參與者
+          { "id": "user1", "name": "李楷燦" },
+          { "id": "user2", "name": "朴志晟", "is_me": true }  // 標記當前用戶
+        ]
+      },
+      "content": [  // 聊天記錄
+        {
+          "id": "msg1",  // 消息ID
+          "sender_id": "user1",  // 發送者ID
+          "text": "大家今晚記得九點錄製綜藝，別遲到。",  // 消息內容
+          "timestamp": 1710481800  // UNIX時間戳
+        },
+        {
+          "id": "msg2",
+          "sender_id": "user2",
+          "text": "好的。",
+          "timestamp": 1710481860
+        }
+      ]
+    },
+    {
+      "id": "memo1",  // 備忘錄項目ID
+      "type": "memo",  // 備忘錄類型
+      "metadata": {
+        "title": "志晟的習慣",  // 備忘錄標題
+        "created_at": "2024-03-15T14:30:00+08:00"  // 創建時間（ISO 8601 格式）
+      },
+      "content": {  // 備忘錄內容
+        "text": "1. 喜歡吃草莓但不敢自己買。
+2. 笑起來真的很可愛。"  // 詳細內容（支持換行）
+      }
+    }
+  ]
+}
+
+---
+
+### 字段說明
+#### 全局字段
+- **`version`**  
+  - 說明：標識文件版本號。  
+  - 範例：`"version": "1.0"`
+
+- **`metadata.created_at`**  
+  - 說明：文件的創建時間，ISO 8601 格式。  
+  - 範例：`"created_at": "2024-03-15T14:30:00+08:00"`
+
+- **`items`**  
+  - 說明：包含所有項目（聊天或備忘錄）。  
+
+---
+
+### 聊天項目字段
+- **`type`**  
+  - 說明：類型為聊天，值固定為 `"chat"`。  
+
+- **`metadata.chat_type`**  
+  - 說明：聊天類型，可選值為 `group`（群聊）或 `personal`（私聊）。  
+
+- **`metadata.participants`**  
+  - 說明：聊天參與者列表。當前用戶需標記為 `is_me: true`。  
+  - 範例：
+    "participants": [
+      { "id": "user1", "name": "李楷燦" },
+      { "id": "user2", "name": "朴志晟", "is_me": true }
+    ]
+
+- **`content`**  
+  - 說明：聊天記錄，包含每條消息的 `id`、`sender_id`（發送者）、`text`（消息內容）和 `timestamp`（時間戳）。  
+  - 範例：
+    "content": [
+      { "id": "msg1", "sender_id": "user1", "text": "大家今晚記得九點錄製綜藝，別遲到。", "timestamp": 1710481800 },
+      { "id": "msg2", "sender_id": "user2", "text": "好的。", "timestamp": 1710481860 }
+    ]
+
+---
+
+### 備忘錄項目字段
+- **`type`**  
+  - 說明：類型為備忘錄，值固定為 `"memo"`。
+
+- **`metadata.title`**  
+  - 說明：備忘錄標題。  
+  - 範例：`"title": "志晟的習慣"`
+
+- **`content.text`**  
+  - 說明：備忘錄詳細內容，支持多行文字（換行符 `\n` 表示換行）。  
+  - 範例：
+    "text": "1. 喜歡吃草莓但不敢自己買。\n2. 笑起來真的很可愛。"
+
+---
